@@ -26,7 +26,7 @@ body {
 .grid div {
   border: 1px solid lightblue;
   height: 10%;
-  width: 10%;
+  width: 5%;
   flex-grow: 1;
   box-sizing: border-box;
 }
