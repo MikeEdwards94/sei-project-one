@@ -1,3 +1,32 @@
 body {
   background-color: violet;
+  height: 100vh;
+  margin: 0;
+}
+
+.grid-container {
+  background-color: red;
+  height: 85vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.grid {
+  background-color: silver;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  
+  height: 600px;
+  width: 600px;
+}
+.grid div {
+  border: 1px solid lightblue;
+  height: 10%;
+  width: 10%;
+  flex-grow: 1;
+  box-sizing: border-box;
 }
