@@ -111,13 +111,6 @@ function init() {
     cells[position].classList.remove(alienClass)
   }
 
-  const wallArray = [19, 39, 59, 79, 99, 20, 40, 60, 80]
-
-
-
-
-
-
   function aliensMove() {
     function aliensPlusOne() {
       for (let i = 0; i < aliensCurrentPosition.length; i++) {
@@ -129,7 +122,6 @@ function init() {
         aliensCurrentPosition[i] -= 1
       }
     }
-
     function aliensPlusWidth() {
       for (let i = 0; i < aliensCurrentPosition.length; i++) {
         aliensCurrentPosition[i] += width
@@ -143,12 +135,12 @@ function init() {
         removeAllAliens(aliensCurrentPosition)
         aliensPlusOne()
         addAllAliens(aliensCurrentPosition)
-        if (aliensCurrentPosition.includes(19) || aliensCurrentPosition.includes(59)) {
+        if (aliensCurrentPosition.includes(19) || aliensCurrentPosition.includes(39) || aliensCurrentPosition.includes(59) || aliensCurrentPosition.includes(79) || aliensCurrentPosition.includes(99) || aliensCurrentPosition.includes(119) || aliensCurrentPosition.includes(139) || aliensCurrentPosition.includes(159) || aliensCurrentPosition.includes(179) || aliensCurrentPosition.includes(199)) {
           console.log('wall hit')
           clearInterval(timerIdRight)
           moveDownToLeft()
         }
-      }, 1000)
+      }, 100)
     }
     function moveDownToLeft() {
       let timerIdDown = null
@@ -158,7 +150,7 @@ function init() {
         addAllAliens(aliensCurrentPosition)
         clearInterval(timerIdDown)
         moveLeft()
-      }, 1000)
+      }, 100)
     }
     function moveLeft() {
       let timerIdLeft = null
@@ -166,12 +158,12 @@ function init() {
         removeAllAliens(aliensCurrentPosition)
         aliensMinusOne()
         addAllAliens(aliensCurrentPosition)
-        if (aliensCurrentPosition.includes(20)) {
+        if (aliensCurrentPosition.includes(20) || aliensCurrentPosition.includes(40) || aliensCurrentPosition.includes(60) || aliensCurrentPosition.includes(80) || aliensCurrentPosition.includes(100) || aliensCurrentPosition.includes(120) || aliensCurrentPosition.includes(140) || aliensCurrentPosition.includes(160) || aliensCurrentPosition.includes(180)) {
           console.log('wall hit')
           clearInterval(timerIdLeft)
           moveDownToRight()
         }
-      }, 1000)
+      }, 100)
     }
     function moveDownToRight() {
       let timerIdDown = null
@@ -181,7 +173,7 @@ function init() {
         addAllAliens(aliensCurrentPosition)
         clearInterval(timerIdDown)
         moveRight()
-      }, 1000)
+      }, 100)
     }
     moveRight()
   }
@@ -204,3 +196,5 @@ function init() {
 
 window.addEventListener('DOMContentLoaded', init)
 
+//aliensCurrentPosition.includes(19) || aliensCurrentPosition.includes(39) || aliensCurrentPosition.includes(59) || aliensCurrentPosition.includes(79) || aliensCurrentPosition.includes(99) || aliensCurrentPosition.includes(119) || aliensCurrentPosition.includes(139) || aliensCurrentPosition.includes(159) || aliensCurrentPosition.includes(179) || aliensCurrentPosition.includes(199)
+//aliensCurrentPosition.includes(20) || aliensCurrentPosition.includes(40) || aliensCurrentPosition.includes(60) || aliensCurrentPosition.includes(80) || aliensCurrentPosition.includes(100) || aliensCurrentPosition.includes(120) || aliensCurrentPosition.includes(140) || aliensCurrentPosition.includes(160) || aliensCurrentPosition.includes(180)
