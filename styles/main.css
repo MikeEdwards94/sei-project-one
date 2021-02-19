@@ -3,6 +3,9 @@ body {
   height: 100vh;
   margin: 0;
 }
+h1 {
+  font-size: 10px;
+}
 
 .grid-container {
   background-color: lime;

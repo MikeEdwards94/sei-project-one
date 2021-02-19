@@ -84,15 +84,24 @@ function init() {
 
     if (key === 38) {
       cells[startingMissilePosition].classList.add('missile')
-      setInterval(() => {
-        if (currentMissilePosition >= width) {
+      let timerIdMissile = null
+      
+      timerIdMissile = setInterval(() => {
+        if (aliensCurrentPosition.includes(currentMissilePosition)) {
+          clearInterval(timerIdMissile)
+          removeMissile(currentMissilePosition)
+          return
+        } else if (currentMissilePosition >= width) {
           removeMissile(currentMissilePosition)
           currentMissilePosition -= width
           addMissile(currentMissilePosition)
         } else {
-          clearInterval
+          clearInterval(timerIdMissile)
           removeMissile(currentMissilePosition)
+          return
         }
+        console.log(currentMissilePosition)
+        console.log(aliensCurrentPosition)
       }, 500)
     }
   }
@@ -132,7 +141,7 @@ function init() {
         aliensCurrentPosition[i] += width
       }
     }
-    
+
 
     function moveRight() {
       let timerIdRight = null
@@ -144,7 +153,7 @@ function init() {
           clearInterval(timerIdRight)
           moveDownToLeft()
         }
-      }, 100)
+      }, 1000)
     }
     function moveDownToLeft() {
       let timerIdDown = null
@@ -158,7 +167,7 @@ function init() {
           clearInterval(timerIdDown)
           moveLeft()
         }
-      }, 100)
+      }, 1000)
     }
     function moveLeft() {
       let timerIdLeft = null
@@ -170,7 +179,7 @@ function init() {
           clearInterval(timerIdLeft)
           moveDownToRight()
         }
-      }, 100)
+      }, 1000)
     }
     function moveDownToRight() {
       let timerIdDown = null
@@ -184,13 +193,11 @@ function init() {
           clearInterval(timerIdDown)
           moveRight()
         }
-      }, 100)
+      }, 1000)
     }
     moveRight()
   }
   aliensMove()
-
-
 
 
 
