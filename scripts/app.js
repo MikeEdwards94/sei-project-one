@@ -77,10 +77,15 @@ function init() {
       console.log(startingMissilePosition)
       cells[startingMissilePosition].classList.add('missile')
       const missileTimer = setInterval(() => {
-        removeMissile(currentMissilePosition)
-        console.log(currentMissilePosition -= width)
-        addMissile(currentMissilePosition)
-      }, 2000)
+        if (currentMissilePosition >= width) {
+          removeMissile(currentMissilePosition)
+          currentMissilePosition -= width
+          addMissile(currentMissilePosition)
+        } else {
+          clearInterval
+          removeMissile(currentMissilePosition)
+        }
+      }, 500)
     }
   }
 
