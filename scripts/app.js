@@ -9,7 +9,7 @@ function init() {
   const cells = []
 
   const playerClass = 'player'
-  const playerStartPosition = (height * width) - (width / 2)
+  const playerStartPosition = (cellCount) - (width / 2)
   let playerCurrentPosition = 190
 
   const alienClass = 'alien'
@@ -111,8 +111,11 @@ function init() {
     cells[position].classList.remove(alienClass)
   }
 
-  rightWallArray = []
-  console.log(rightWallArray)
+  let array = []
+  for (let i = 19; i <= cellCount; i += 40) {
+    console.log(i)
+  }
+
 
   function aliensMove() {
     function aliensPlusOne() {
@@ -133,12 +136,12 @@ function init() {
     }
 
     setInterval(() => {
-      if (aliensCurrentPosition.includes(width-1)) {
+      if (aliensCurrentPosition.includes(width - 1)) {
         console.log('wall hit')
         removeAllAliens(aliensCurrentPosition)
         aliensPlusWidth()
         addAllAliens(aliensCurrentPosition)
-      } else if (aliensCurrentPosition.some(value => value >= 19)) {
+      } else if (aliensCurrentPosition.includes(32)) {
         removeAllAliens(aliensCurrentPosition)
         aliensMinusOne()
         addAllAliens(aliensCurrentPosition)
@@ -149,7 +152,7 @@ function init() {
       }
     }, 300)
   }
-  aliensMove
+  aliensMove()
 
 
 
