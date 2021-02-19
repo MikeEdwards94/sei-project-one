@@ -13,7 +13,7 @@ function init() {
   let playerCurrentPosition = 190
 
   const alienClass = 'alien'
-  const aliens = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  const aliensStartingPosition = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
   let aliensCurrentPosition = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
   
 
@@ -98,11 +98,15 @@ function init() {
 
 
   function addAllAliens() {
-    aliens.forEach(position => addAlien(position))
+    aliensCurrentPosition.forEach(position => addAlien(position))
   }
   function removeAllAliens() {
-    aliens.forEach(position => removeAlien(position))
+    aliensCurrentPosition.forEach(position => removeAlien(position))
   }
+  let moveAliensRight = aliensCurrentPosition.map(position => position + 1)
+  
+
+
 
 
   function addAlien(position) {
@@ -113,7 +117,17 @@ function init() {
   }
 
   function aliensMove() {
-    console.log(aliensCurrentPosition)
+    function aliensPlusOne() {
+      for (let i = 0; i < aliensCurrentPosition.length; i++) {
+        aliensCurrentPosition[i] += 1
+      }
+    }
+
+    setInterval(() => {
+      removeAllAliens(aliensCurrentPosition)
+      aliensPlusOne()
+      addAllAliens(aliensCurrentPosition)
+    }, 1000)
   }
   aliensMove()
 
@@ -133,3 +147,10 @@ function init() {
 }
 
 window.addEventListener('DOMContentLoaded', init)
+
+
+
+
+//console.log('moveAliensRight fnctn',moveAliensRight)
+//console.log('aliensCurrentPosition', aliensCurrentPosition)     
+//console.log('aliensCurrentPosition plus 1', aliensCurrentPosition += parseFloat(1))     
