@@ -103,11 +103,6 @@ function init() {
   function removeAllAliens() {
     aliensCurrentPosition.forEach(position => removeAlien(position))
   }
-  let moveAliensRight = aliensCurrentPosition.map(position => position + 1)
-  
-
-
-
 
   function addAlien(position) {
     cells[position].classList.add(alienClass)
@@ -116,20 +111,45 @@ function init() {
     cells[position].classList.remove(alienClass)
   }
 
+  rightWallArray = []
+  console.log(rightWallArray)
+
   function aliensMove() {
     function aliensPlusOne() {
       for (let i = 0; i < aliensCurrentPosition.length; i++) {
         aliensCurrentPosition[i] += 1
       }
     }
+    function aliensMinusOne() {
+      for (let i = 0; i < aliensCurrentPosition.length; i++) {
+        aliensCurrentPosition[i] -= 1
+      }
+    }
+
+    function aliensPlusWidth() {
+      for (let i = 0; i < aliensCurrentPosition.length; i++) {
+        aliensCurrentPosition[i] += width
+      }
+    }
 
     setInterval(() => {
-      removeAllAliens(aliensCurrentPosition)
-      aliensPlusOne()
-      addAllAliens(aliensCurrentPosition)
-    }, 1000)
+      if (aliensCurrentPosition.includes(width-1)) {
+        console.log('wall hit')
+        removeAllAliens(aliensCurrentPosition)
+        aliensPlusWidth()
+        addAllAliens(aliensCurrentPosition)
+      } else if (aliensCurrentPosition.some(value => value >= 19)) {
+        removeAllAliens(aliensCurrentPosition)
+        aliensMinusOne()
+        addAllAliens(aliensCurrentPosition)
+      } else {
+        removeAllAliens(aliensCurrentPosition)
+        aliensPlusOne()
+        addAllAliens(aliensCurrentPosition)
+      }
+    }, 300)
   }
-  aliensMove()
+  aliensMove
 
 
 
