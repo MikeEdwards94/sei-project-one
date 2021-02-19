@@ -13,8 +13,8 @@ function init() {
   let playerCurrentPosition = 190
 
   const alienClass = 'alien'
-  const aliensStartingPosition = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
-  let aliensCurrentPosition = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  const aliensStartingPosition = [0, 1, 2, 3, 4, 20, 21 ,22, 23, 24, 40, 41, 42, 43, 44, 60, 61, 62, 63, 64]
+  let aliensCurrentPosition = [0, 1, 2, 3, 4, 20, 21 ,22, 23, 24, 40, 41, 42, 43, 44, 60, 61, 62, 63, 64]
   
 
   function createGrid(playerStartPosition) {
@@ -111,10 +111,11 @@ function init() {
     cells[position].classList.remove(alienClass)
   }
 
-  let array = []
-  for (let i = 19; i <= cellCount; i += 40) {
-    console.log(i)
-  }
+  const wallArray = [19, 39, 59, 79, 99, 20, 40, 60, 80]
+
+
+
+
 
 
   function aliensMove() {
@@ -134,23 +135,55 @@ function init() {
         aliensCurrentPosition[i] += width
       }
     }
+    
 
-    setInterval(() => {
-      if (aliensCurrentPosition.includes(width - 1)) {
-        console.log('wall hit')
-        removeAllAliens(aliensCurrentPosition)
-        aliensPlusWidth()
-        addAllAliens(aliensCurrentPosition)
-      } else if (aliensCurrentPosition.includes(32)) {
-        removeAllAliens(aliensCurrentPosition)
-        aliensMinusOne()
-        addAllAliens(aliensCurrentPosition)
-      } else {
+    function moveRight() {
+      let timerIdRight = null
+      timerIdRight = setInterval(() => {
         removeAllAliens(aliensCurrentPosition)
         aliensPlusOne()
         addAllAliens(aliensCurrentPosition)
-      }
-    }, 300)
+        if (aliensCurrentPosition.includes(19) || aliensCurrentPosition.includes(59)) {
+          console.log('wall hit')
+          clearInterval(timerIdRight)
+          moveDownToLeft()
+        }
+      }, 1000)
+    }
+    function moveDownToLeft() {
+      let timerIdDown = null
+      timerIdDown = setInterval(() => {
+        removeAllAliens(aliensCurrentPosition)
+        aliensPlusWidth()
+        addAllAliens(aliensCurrentPosition)
+        clearInterval(timerIdDown)
+        moveLeft()
+      }, 1000)
+    }
+    function moveLeft() {
+      let timerIdLeft = null
+      timerIdLeft = setInterval(() => {
+        removeAllAliens(aliensCurrentPosition)
+        aliensMinusOne()
+        addAllAliens(aliensCurrentPosition)
+        if (aliensCurrentPosition.includes(20)) {
+          console.log('wall hit')
+          clearInterval(timerIdLeft)
+          moveDownToRight()
+        }
+      }, 1000)
+    }
+    function moveDownToRight() {
+      let timerIdDown = null
+      timerIdDown = setInterval(() => {
+        removeAllAliens(aliensCurrentPosition)
+        aliensPlusWidth()
+        addAllAliens(aliensCurrentPosition)
+        clearInterval(timerIdDown)
+        moveRight()
+      }, 1000)
+    }
+    moveRight()
   }
   aliensMove()
 
@@ -171,9 +204,3 @@ function init() {
 
 window.addEventListener('DOMContentLoaded', init)
 
-
-
-
-//console.log('moveAliensRight fnctn',moveAliensRight)
-//console.log('aliensCurrentPosition', aliensCurrentPosition)     
-//console.log('aliensCurrentPosition plus 1', aliensCurrentPosition += parseFloat(1))     
