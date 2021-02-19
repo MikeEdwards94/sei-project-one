@@ -5,7 +5,7 @@ body {
 }
 
 .grid-container {
-  background-color: red;
+  background-color: lime;
   height: 85vh;
 
   display: flex;
@@ -34,5 +34,8 @@ body {
   background-color: indigo;
 }
 .missile {
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADgCAMAAADCMfHtAAAAQlBMVEX/////AAD/yAD/jo7/hwD/zAD/np7/lpb/mpr/yQD/gAD/o6P/kpL/mJj/paX/ywD/iwD/0QD/VwD/iYn/ysr/YGBeKv7vAAABsElEQVR4nO3Wy26CUBiFUXsRaLFqvbz/q1ZHegYljcWcfcj6hoTBXmHws1pJkpTT18t9X7XnPKGuEHa15zwhwvYjbL9tIdzWnjNnm5ff29QeN0v9hLCvPW6WCNuPsP26CWHjZ/Ftglb2VnvqgxES5kdImF8pfN+93tq9L1G4/ri1Xqbw7hsSNhIhYX6EhPkREuZHSJgfIWF+hIT5ERLmR0iYHyFhfoSE+RES5kdImB8hYX6EhPkREuZHSJgfIWF+hIT5ERLmR0iYHyFhfoSE+RES5kdImB8hYX6EhPkREuZHSJgfIWF+hIT5ERLmR0iYHyFhfoSE+RES5kdImB8hYX6EhPkREuZHSJgfIWF+hIT5ERLmR0iYHyFhfoSE+RES5kdImB8hYX6EhPkREuZHSJhfKdx/r2997xcoPHzed1igcCrC1AgJ8zv+WXisPfXBTt14aXueoJ2311e6U+2p/2uYEA61x81SPyHsa4+bJcL2W75wMyHc1B43S6ehuzSWR+M8Xh8OjZ+JsrEQjrXnPKGuEHa15zwhwvZbvrD8PV3GD2nZqR9u9Ys6E5IkSZJWP0jANw4IAsrDAAAAAElFTkSuQmCC');
+  background-color:wheat
+}
+.alien {
+  background-color: red;
 }
