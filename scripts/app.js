@@ -12,20 +12,10 @@ function init() {
   const playerStartPosition = (height * width) - (width / 2)
   let playerCurrentPosition = 190
 
-
   const alienClass = 'alien'
-  const alienStartingPosition = 0
-  const alienCurrentPosition = 0
-
-  function addAlien(position) {
-    cells[position].classList.add(alienClass)
-  }
-
-  function removeAlien(position) {
-    cells[position].classList.remove(alienClass)
-  }
-
-  document.addEventListener('keydown', fireMissile)
+  const aliens = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  let aliensCurrentPosition = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+  
 
   function createGrid(playerStartPosition) {
     for (let i = 0; i < cellCount; i++) {
@@ -35,7 +25,7 @@ function init() {
       cells.push(cell)
     }
     addPlayer(playerStartPosition)
-    addAlien(alienStartingPosition)
+    addAllAliens()
   }
   createGrid(playerStartPosition)
 
@@ -88,8 +78,6 @@ function init() {
     const key = event.keyCode
 
     if (key === 38) {
-      console.log()
-      console.log(startingMissilePosition)
       cells[startingMissilePosition].classList.add('missile')
       setInterval(() => {
         if (currentMissilePosition >= width) {
@@ -104,11 +92,30 @@ function init() {
     }
   }
 
+  document.addEventListener('keydown', fireMissile)
 
   //! ALIENS
 
 
+  function addAllAliens() {
+    aliens.forEach(position => addAlien(position))
+  }
+  function removeAllAliens() {
+    aliens.forEach(position => removeAlien(position))
+  }
 
+
+  function addAlien(position) {
+    cells[position].classList.add(alienClass)
+  }
+  function removeAlien(position) {
+    cells[position].classList.remove(alienClass)
+  }
+
+  function aliensMove() {
+    console.log(aliensCurrentPosition)
+  }
+  aliensMove()
 
 
 
