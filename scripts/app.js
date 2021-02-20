@@ -108,7 +108,7 @@ function init() {
 
   document.addEventListener('keydown', fireMissile)
 
-  if (cell.classList.contains('missile') && cells.classList.contains('alien')) {
+  if (cells.classList.contains('missile')) {
     console.log('wowowow')
   }
 
