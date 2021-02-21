@@ -2,6 +2,7 @@ function init() {
 
   const grid = document.querySelector('.grid')
 
+
   const width = 20
   const height = 10
   const cellCount = width * height
@@ -15,6 +16,7 @@ function init() {
   const alienClass = 'alien'
   const aliensStartingPosition = [0, 1, 2, 3, 4, 20, 21 ,22, 23, 24, 40, 41, 42, 43, 44, 60, 61, 62, 63, 64]
   let aliensCurrentPosition = [0, 1, 2, 3, 4, 20, 21 ,22, 23, 24, 40, 41, 42, 43, 44, 60, 61, 62, 63, 64]
+
 
   const scoreDisplay = document.querySelector('#scoreDisplay')
   let score = 0
@@ -108,9 +110,8 @@ function init() {
 
   document.addEventListener('keydown', fireMissile)
 
-  if (cells.classList.contains('missile')) {
-    console.log('wowowow')
-  }
+
+
 
 
   //! ALIENS
@@ -128,6 +129,9 @@ function init() {
   }
   function removeAlien(position) {
     cells[position].classList.remove(alienClass)
+  }
+  function spliceAlien(position) {
+    aliensCurrentPosition.splice(position, 1)
   }
 
   function aliensMove() {
@@ -147,10 +151,21 @@ function init() {
       }
     }
 
+    //if (contains(aliensCurrentPosition)) {
+    //  console.log('alien')
+    //}
+    //if (aliensCurrentPosition.includes('missile')) {
+    //  console.log(aliensCurrentPosition)
+    // aliensCurrentPosition.splice(2,1)
+    //}
+    //if (contains('missile')) {
+    //  console.log('hit')
+    //}
 
     function moveRight() {
       let timerIdRight = null
       timerIdRight = setInterval(() => {
+        console.log(aliensCurrentPosition)
         removeAllAliens(aliensCurrentPosition)
         aliensPlusOne()
         addAllAliens(aliensCurrentPosition)
@@ -206,7 +221,67 @@ function init() {
 
 
 
+  //!ALIEN BOMB
 
+  const alienLength = aliensCurrentPosition.length
+
+  const bombClass = 'bomb'
+
+
+  function addBomb(position) {
+    cells[position].classList.add(bombClass)
+  }
+
+  function removeBomb(position) {
+    cells[position].classList.remove(bombClass)
+  }
+
+
+  let timerIdAlienBomb = null
+  timerIdAlienBomb = setInterval(() => {
+
+    const randomNumber = Math.floor(Math.random() * alienLength)
+    const alienBombing = aliensCurrentPosition[randomNumber]
+    
+    function AlienBombs(event) {
+      const startingBombPosition = alienBombing + width
+      let currentBombPosition = alienBombing
+      
+      let timerIdBomb = null
+  
+      timerIdBomb = setInterval(() => {
+        if (currentBombPosition <= 180) {
+          removeBomb(currentBombPosition)
+          currentBombPosition += width
+          addBomb(currentBombPosition)
+        } else {
+          clearInterval(timerIdBomb)
+          removeBomb(currentBombPosition)
+          return
+        }
+      }, 600)
+    }
+    AlienBombs()
+
+  }, 8000)
+
+
+
+
+
+
+
+
+
+  //const gridDiv = document.querySelector('.grid').childNodes
+  //gridDiv[0].style.backgroundColor = 'yellow'
+
+  //let j = 0
+  //for (j = 0; j < gridDiv.length; j++) {
+  //  gridDiv[j].classList.add = 'gridSquares'
+  //}
+
+  //console.log(gridDiv)
 
 
 
@@ -223,3 +298,7 @@ window.addEventListener('DOMContentLoaded', init)
 //aliensCurrentPosition.includes(20) || aliensCurrentPosition.includes(40) || aliensCurrentPosition.includes(60) || aliensCurrentPosition.includes(80) || aliensCurrentPosition.includes(100) || aliensCurrentPosition.includes(120) || aliensCurrentPosition.includes(140) || aliensCurrentPosition.includes(160) || aliensCurrentPosition.includes(180)
 
 //aliensCurrentPosition.includes(180) || aliensCurrentPosition.includes(181) || aliensCurrentPosition.includes(182) || aliensCurrentPosition.includes(183) || aliensCurrentPosition.includes(184) || aliensCurrentPosition.includes(185) || aliensCurrentPosition.includes(186) || aliensCurrentPosition.includes(187) || aliensCurrentPosition.includes(188) || aliensCurrentPosition.includes(189) || aliensCurrentPosition.includes(190) || aliensCurrentPosition.includes(191) || aliensCurrentPosition.includes(192) || aliensCurrentPosition.includes(193) || aliensCurrentPosition.includes(194) || aliensCurrentPosition.includes(195) || aliensCurrentPosition.includes(196) || aliensCurrentPosition.includes(197) || aliensCurrentPosition.includes(198) || aliensCurrentPosition.includes(199)
+
+//if (cells.classList.contains('missile')) {
+//  console.log('wowowow')
+//}

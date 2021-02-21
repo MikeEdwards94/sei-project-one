@@ -37,8 +37,20 @@ h1 {
   background-color: indigo;
 }
 .missile {
-  background-color:wheat
+  background-color:wheat;
 }
 .alien {
   background-color: red;
+}
+.bomb {
+  background-color: yellow;
+}
+
+
+.mainScreen {
+  background-image: url('https://hyperpix.net/wp-content/uploads/2019/09/doom-logo-font-download.jpg');
+}
+
+.gridCell {
+  font-size: 0px;
 }
