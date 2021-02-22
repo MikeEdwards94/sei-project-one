@@ -23,17 +23,16 @@ h1 {
   align-items: center;
   flex-wrap: wrap;
   border: 5px solid violet;
-  ccolor: white;
   
   height: 600px;
   width: 600px;
 }
 .grid div {
-  border: 1px solid lightblue;
   height: 10%;
   width: 5%;
   flex-grow: 1;
   box-sizing: border-box;
+  font-size: 0px;
 }
 .player {
   background-color: black;
@@ -43,7 +42,10 @@ h1 {
   background-size: 35px 50px;
 }
 .missile {
-  background-color:wheat;
+  background-image: url('../Images/Gunfire.png');
+  background-position: top;
+  background-size: 10px 60px;
+  background-repeat: no-repeat;
 }
 .bomb {
   background-image: url('../Images/Fireball2.gif');
