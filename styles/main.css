@@ -116,6 +116,8 @@ h1 {
 .hidden {
   display: none;
 }
-#gameOver {
-  display: none;
+.finalScore {
+  background-color: violet;
+  height: 300px;
+  width: 200px;
 }
