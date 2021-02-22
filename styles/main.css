@@ -8,7 +8,7 @@ h1 {
 }
 
 .grid-container {
-  background-color: lime;
+  background-color: black;
   height: 85vh;
 
   display: flex;
@@ -22,6 +22,7 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  border: 5px solid violet;
   
   height: 600px;
   width: 600px;
@@ -58,4 +59,7 @@ h1 {
 
 .gridCell {
   font-size: 0px;
+}
+.hidden {
+  display: none;
 }

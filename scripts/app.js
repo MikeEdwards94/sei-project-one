@@ -7,6 +7,7 @@ function init() {
 
   function startGame() {
 
+    startButton.classList.add('hidden')
 
     const grid = document.querySelector('.grid')
 
@@ -57,17 +58,18 @@ function init() {
     function handleKeyDown(event) {
       const key = event.keyCode
 
-      removePlayer(playerCurrentPosition)
+      if (lifeRemaining !== 0) {
+        removePlayer(playerCurrentPosition)
 
-      if (key === 39 && playerCurrentPosition % width !== width - 1) {
-        playerCurrentPosition++
-      }
-      if (key === 37 && playerCurrentPosition % width !== 0) {
-        playerCurrentPosition--
-      }
+        if (key === 39 && playerCurrentPosition % width !== width - 1) {
+          playerCurrentPosition++
+        }
+        if (key === 37 && playerCurrentPosition % width !== 0) {
+          playerCurrentPosition--
+        }
 
-      addPlayer(playerCurrentPosition)
-    
+        addPlayer(playerCurrentPosition)
+      }
     }
 
     document.addEventListener('keydown', handleKeyDown)
@@ -92,34 +94,37 @@ function init() {
     }
 
     function fireMissile(event) {
-      const startingMissilePosition = playerCurrentPosition - width
-      let currentMissilePosition = playerCurrentPosition - width
-      const key = event.keyCode
+      if (lifeRemaining !== 0) {
 
-      if (key === 38) {
-        cells[startingMissilePosition].classList.add('missile')
-        let timerIdMissile = null
+        const startingMissilePosition = playerCurrentPosition - width
+        let currentMissilePosition = playerCurrentPosition - width
+        const key = event.keyCode
+
+        if (key === 38) {
+          cells[startingMissilePosition].classList.add('missile')
+          let timerIdMissile = null
       
-        timerIdMissile = setInterval(() => {
-          if (aliensCurrentPosition.includes(currentMissilePosition)) {
-            console.log('hit', currentMissilePosition)
-            spliceAlien(findIndex(currentMissilePosition, aliensCurrentPosition), 1)
-            removeAlien(currentMissilePosition)
-            clearInterval(timerIdMissile)
-            removeMissile(currentMissilePosition)
-            currentScore += 100
-            scoreDisplay.innerHTML = currentScore
-            return
-          } else if (currentMissilePosition >= width) {
-            removeMissile(currentMissilePosition)
-            currentMissilePosition -= width
-            addMissile(currentMissilePosition)
-          } else {
-            clearInterval(timerIdMissile)
-            removeMissile(currentMissilePosition)
-            return
-          }
-        }, 500)
+          timerIdMissile = setInterval(() => {
+            if (aliensCurrentPosition.includes(currentMissilePosition)) {
+              console.log('hit', currentMissilePosition)
+              spliceAlien(findIndex(currentMissilePosition, aliensCurrentPosition), 1)
+              removeAlien(currentMissilePosition)
+              clearInterval(timerIdMissile)
+              removeMissile(currentMissilePosition)
+              currentScore += 100
+              scoreDisplay.innerHTML = currentScore
+              return
+            } else if (currentMissilePosition >= width) {
+              removeMissile(currentMissilePosition)
+              currentMissilePosition -= width
+              addMissile(currentMissilePosition)
+            } else {
+              clearInterval(timerIdMissile)
+              removeMissile(currentMissilePosition)
+              return
+            }
+          }, 500)
+        }
       }
     }
 
@@ -296,33 +301,17 @@ function init() {
       AlienBombs()
 
     }, 8000)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   }
 
+
+
+  const gridContainer = document.querySelector('.grid-container')
+  console.log(gridContainer)
 
   function gameOver() {
-    
+    console.log('GAME OVER')
+    gridContainer.classList.add('hidden')
   }
-
-
-
-
-
 
 
 }
