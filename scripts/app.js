@@ -2,7 +2,6 @@ function init() {
 
   const grid = document.querySelector('.grid')
 
-
   const width = 20
   const height = 10
   const cellCount = width * height
@@ -79,6 +78,11 @@ function init() {
     cells[position].classList.remove(missileClass)
   }
 
+  function findIndex(value, array) {
+    const indexOfVal = array.indexOf(value)
+    return indexOfVal >= 0 ? indexOfVal : 'Not Found'
+  }
+
   function fireMissile(event) {
     const startingMissilePosition = playerCurrentPosition - width
     let currentMissilePosition = playerCurrentPosition - width
@@ -90,6 +94,9 @@ function init() {
       
       timerIdMissile = setInterval(() => {
         if (aliensCurrentPosition.includes(currentMissilePosition)) {
+          console.log('hit', currentMissilePosition)
+          spliceAlien(findIndex(currentMissilePosition, aliensCurrentPosition), 1)
+          removeAlien(currentMissilePosition)
           clearInterval(timerIdMissile)
           removeMissile(currentMissilePosition)
           return
@@ -102,8 +109,6 @@ function init() {
           removeMissile(currentMissilePosition)
           return
         }
-        console.log(currentMissilePosition)
-        console.log(aliensCurrentPosition)
       }, 500)
     }
   }
@@ -165,7 +170,6 @@ function init() {
     function moveRight() {
       let timerIdRight = null
       timerIdRight = setInterval(() => {
-        console.log(aliensCurrentPosition)
         removeAllAliens(aliensCurrentPosition)
         aliensPlusOne()
         addAllAliens(aliensCurrentPosition)
@@ -250,7 +254,14 @@ function init() {
       let timerIdBomb = null
   
       timerIdBomb = setInterval(() => {
-        if (currentBombPosition <= 180) {
+        if (currentBombPosition === playerCurrentPosition) {
+          removeBomb(currentBombPosition)
+          clearInterval(timerIdBomb)
+          lifeRemaining -= 25
+          lifeDisplay.innerHTML = lifeRemaining
+          console.log('player hit life remaining ->', lifeRemaining)
+        }
+        if (currentBombPosition <= 179) {
           removeBomb(currentBombPosition)
           currentBombPosition += width
           addBomb(currentBombPosition)
