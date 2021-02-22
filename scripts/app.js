@@ -20,7 +20,7 @@ function init() {
   const scoreDisplay = document.querySelector('#scoreDisplay')
   let score = 0
   const lifeDisplay = document.querySelector('#lifeDisplay')
-  let lifeRemaining = 100
+  let lifeRemaining = 25
 
 
   function createGrid(playerStartPosition) {
@@ -259,6 +259,11 @@ function init() {
           clearInterval(timerIdBomb)
           lifeRemaining -= 25
           lifeDisplay.innerHTML = lifeRemaining
+          if (lifeRemaining === 0) {
+            clearInterval(timerIdAlienBomb)
+            gameOver()
+            return
+          }
           console.log('player hit life remaining ->', lifeRemaining)
         }
         if (currentBombPosition <= 179) {
@@ -298,7 +303,9 @@ function init() {
 
 
 
-
+  function gameOver() {
+    clearInterval(aliensMove)
+  }
 
 
 }
