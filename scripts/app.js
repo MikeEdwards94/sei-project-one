@@ -18,7 +18,7 @@ function init() {
 
 
   const scoreDisplay = document.querySelector('#scoreDisplay')
-  let score = 0
+  let currentScore = 0
   const lifeDisplay = document.querySelector('#lifeDisplay')
   let lifeRemaining = 25
 
@@ -99,6 +99,8 @@ function init() {
           removeAlien(currentMissilePosition)
           clearInterval(timerIdMissile)
           removeMissile(currentMissilePosition)
+          currentScore += 100
+          scoreDisplay.innerHTML = currentScore
           return
         } else if (currentMissilePosition >= width) {
           removeMissile(currentMissilePosition)
@@ -156,20 +158,14 @@ function init() {
       }
     }
 
-    //if (contains(aliensCurrentPosition)) {
-    //  console.log('alien')
-    //}
-    //if (aliensCurrentPosition.includes('missile')) {
-    //  console.log(aliensCurrentPosition)
-    // aliensCurrentPosition.splice(2,1)
-    //}
-    //if (contains('missile')) {
-    //  console.log('hit')
-    //}
 
     function moveRight() {
       let timerIdRight = null
       timerIdRight = setInterval(() => {
+        if (lifeRemaining === 0) {
+          clearInterval(timerIdRight)
+          return
+        }
         removeAllAliens(aliensCurrentPosition)
         aliensPlusOne()
         addAllAliens(aliensCurrentPosition)
@@ -182,6 +178,10 @@ function init() {
     function moveDownToLeft() {
       let timerIdDown = null
       timerIdDown = setInterval(() => {
+        if (lifeRemaining === 0) {
+          clearInterval(timerIdDown)
+          return
+        }
         removeAllAliens(aliensCurrentPosition)
         aliensPlusWidth()
         addAllAliens(aliensCurrentPosition)
@@ -196,6 +196,10 @@ function init() {
     function moveLeft() {
       let timerIdLeft = null
       timerIdLeft = setInterval(() => {
+        if (lifeRemaining === 0) {
+          clearInterval(timerIdLeft)
+          return
+        }
         removeAllAliens(aliensCurrentPosition)
         aliensMinusOne()
         addAllAliens(aliensCurrentPosition)
@@ -208,6 +212,10 @@ function init() {
     function moveDownToRight() {
       let timerIdDown = null
       timerIdDown = setInterval(() => {
+        if (lifeRemaining === 0) {
+          clearInterval(timerIdDown)
+          return
+        }
         removeAllAliens(aliensCurrentPosition)
         aliensPlusWidth()
         addAllAliens(aliensCurrentPosition)
@@ -289,22 +297,12 @@ function init() {
 
 
 
-  //const gridDiv = document.querySelector('.grid').childNodes
-  //gridDiv[0].style.backgroundColor = 'yellow'
-
-  //let j = 0
-  //for (j = 0; j < gridDiv.length; j++) {
-  //  gridDiv[j].classList.add = 'gridSquares'
-  //}
-
-  //console.log(gridDiv)
 
 
 
 
 
   function gameOver() {
-    clearInterval(aliensMove)
   }
 
 
@@ -320,3 +318,13 @@ window.addEventListener('DOMContentLoaded', init)
 //if (cells.classList.contains('missile')) {
 //  console.log('wowowow')
 //}
+
+//const gridDiv = document.querySelector('.grid').childNodes
+//gridDiv[0].style.backgroundColor = 'yellow'
+
+//let j = 0
+//for (j = 0; j < gridDiv.length; j++) {
+//  gridDiv[j].classList.add = 'gridSquares'
+//}
+
+//console.log(gridDiv)
