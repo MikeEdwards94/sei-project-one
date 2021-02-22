@@ -37,7 +37,7 @@ h1 {
 }
 .player {
   background-color: black;
-  background-image: url('/Images/Test.png');
+  background-image: url('../Images/Test.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 60px 55px;
@@ -46,16 +46,29 @@ h1 {
 .missile {
   background-color:wheat;
 }
+.bomb {
+  background-image: url('../Images/Fireball2.gif');
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: 50px 50px;
+}
 .alien {
-  background-image: url('/Images/BasicCacoGif.gif');
+  background-image: url('../Images/BasicCacoGif.gif');
   background-position: top;
   background-size: 30px 30px;
   background-repeat: no-repeat;
 }
-.bomb {
-  background-color: yellow;
+.alien.bomb {
+  background-image: url('../Images/BasicCacoGif.gif'), url('../Images/Fireball2.gif');
+  background-position: top, bottom;
+  background-size: 30px 30px, 50px 50px;
 }
-
+.alien.missile {
+  background-image: url('../Images/CacoDeathGif.gif');
+  background-position: top;
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+}
 
 .mainScreen {
   background-image: url('https://hyperpix.net/wp-content/uploads/2019/09/doom-logo-font-download.jpg');

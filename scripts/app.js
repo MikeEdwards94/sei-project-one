@@ -29,7 +29,7 @@ function init() {
     const scoreDisplay = document.querySelector('#scoreDisplay')
     let currentScore = 0
     const lifeDisplay = document.querySelector('#lifeDisplay')
-    let lifeRemaining = 25
+    let lifeRemaining = 100
 
 
     function createGrid(playerStartPosition) {
@@ -200,6 +200,7 @@ function init() {
           addAllAliens(aliensCurrentPosition)
           if (aliensCurrentPosition.includes(180) || aliensCurrentPosition.includes(181) || aliensCurrentPosition.includes(182) || aliensCurrentPosition.includes(183) || aliensCurrentPosition.includes(184) || aliensCurrentPosition.includes(185) || aliensCurrentPosition.includes(186) || aliensCurrentPosition.includes(187) || aliensCurrentPosition.includes(188) || aliensCurrentPosition.includes(189) || aliensCurrentPosition.includes(190) || aliensCurrentPosition.includes(191) || aliensCurrentPosition.includes(192) || aliensCurrentPosition.includes(193) || aliensCurrentPosition.includes(194) || aliensCurrentPosition.includes(195) || aliensCurrentPosition.includes(196) || aliensCurrentPosition.includes(197) || aliensCurrentPosition.includes(198) || aliensCurrentPosition.includes(199)) {
             clearInterval(timerIdDown)
+            gameOver()
           } else {
             clearInterval(timerIdDown)
             moveLeft()
@@ -227,6 +228,7 @@ function init() {
         timerIdDown = setInterval(() => {
           if (lifeRemaining === 0) {
             clearInterval(timerIdDown)
+            gameOver()
             return
           }
           removeAllAliens(aliensCurrentPosition)
@@ -234,6 +236,7 @@ function init() {
           addAllAliens(aliensCurrentPosition)
           if (aliensCurrentPosition.includes(180) || aliensCurrentPosition.includes(181) || aliensCurrentPosition.includes(182) || aliensCurrentPosition.includes(183) || aliensCurrentPosition.includes(184) || aliensCurrentPosition.includes(185) || aliensCurrentPosition.includes(186) || aliensCurrentPosition.includes(187) || aliensCurrentPosition.includes(188) || aliensCurrentPosition.includes(189) || aliensCurrentPosition.includes(190) || aliensCurrentPosition.includes(191) || aliensCurrentPosition.includes(192) || aliensCurrentPosition.includes(193) || aliensCurrentPosition.includes(194) || aliensCurrentPosition.includes(195) || aliensCurrentPosition.includes(196) || aliensCurrentPosition.includes(197) || aliensCurrentPosition.includes(198) || aliensCurrentPosition.includes(199)) {
             clearInterval(timerIdDown)
+            gameOver()
           } else {
             clearInterval(timerIdDown)
             moveRight()
@@ -286,7 +289,7 @@ function init() {
               return
             }
             console.log('player hit life remaining ->', lifeRemaining)
-          }
+          } 
           if (currentBombPosition <= 179) {
             removeBomb(currentBombPosition)
             currentBombPosition += width
@@ -300,7 +303,7 @@ function init() {
       }
       AlienBombs()
 
-    }, 8000)
+    }, 3000)
   }
 
 
