@@ -29,7 +29,7 @@ function init() {
     const scoreDisplay = document.querySelector('#scoreDisplay')
     let currentScore = 0
     const lifeDisplay = document.querySelector('#lifeDisplay')
-    let lifeRemaining = 100
+    let lifeRemaining = 25
 
 
     function createGrid(playerStartPosition) {
@@ -309,11 +309,15 @@ function init() {
 
 
   const gridContainer = document.querySelector('.grid-container')
-  console.log(gridContainer)
+  const displayBox = document.querySelector('.displayInfo')
+  const finalScore = document.querySelector('.finalScore')
+  console.log(finalScore)
 
   function gameOver() {
     console.log('GAME OVER')
     gridContainer.classList.add('hidden')
+    displayBox.classList.add('hidden')
+    finalScore.classList.remove('hidden')
   }
 
 

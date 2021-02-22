@@ -1,15 +1,50 @@
 body {
-  background-color: violet;
+  background-color: black;
+  color: white;
   height: 100vh;
   margin: 0;
 }
 h1 {
-  font-size: 10px;
+  height: 250px;
+  background-image: url('../Images/doom-logo.jpg');
+  background-position: center;
+  background-size: 500px 300px;
+  background-repeat: no-repeat;
+  margin: -20px 0;
+}
+.seperator {
+ display: flex;
+ justify-content: center;
+}
+.displayInfo {
+  height: 600px;
+  width: 300px;
+  border: 5px solid wheat;
+  background-color: green;
+}
+#currentScore {
+  background-color: purple;
+  height: 130px;
+  font-size: 40px;
+  text-align: center;
+  margin: 10px 0 0 0;
+}
+#healthRemaining {
+  background-color: blue;
+  height: 120px;
+  margin: 0 0 0 0;
+  font-size: 40px;
+  text-align: center;
+}
+#faceImage {
+  background-color: maroon;
+  height: 340px;
+  margin: 0 0 0 0;
 }
 
+
 .grid-container {
-  background-color: black;
-  height: 85vh;
+  height: 50vh;
 
   display: flex;
   justify-content: center;
