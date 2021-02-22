@@ -17,12 +17,13 @@ h1 {
   flex-wrap: wrap;
 }
 .grid {
-  background-color: silver;
+  background-color: black;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   border: 5px solid violet;
+  ccolor: white;
   
   height: 600px;
   width: 600px;
@@ -46,7 +47,10 @@ h1 {
   background-color:wheat;
 }
 .alien {
-  background-color: red;
+  background-image: url('/Images/BasicCacoGif.gif');
+  background-position: top;
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
 }
 .bomb {
   background-color: yellow;
@@ -61,5 +65,8 @@ h1 {
   font-size: 0px;
 }
 .hidden {
+  display: none;
+}
+#gameOver {
   display: none;
 }
