@@ -67,7 +67,7 @@ h1 {
   text-align: center;
 }
 .faceImage {
-  background-image: url('../Images/Doomguy100_2.gif');
+  background-image: url('../Images/Doomguy100.gif');
   background-size: 70% 80%;
   background-repeat: no-repeat;
   background-position: center;
@@ -83,7 +83,7 @@ h1 {
   margin: 0 0 0 0;
 }
 .doomFace50 {
-  background-image: url('../Images/Doom Menu Screen.jpg');
+  background-image: url('../Images/DoomGuy50.gif');
   background-size: 70% 80%;
   background-repeat: no-repeat;
   background-position: center;
@@ -91,7 +91,7 @@ h1 {
   margin: 0 0 0 0;
 }
 .doomFace25 {
-  background-image: url('../Images/Doom Menu Screen.jpg');
+  background-image: url('../Images/DoomGuy25.gif');
   background-size: 70% 80%;
   background-repeat: no-repeat;
   background-position: center;
@@ -99,7 +99,7 @@ h1 {
   margin: 0 0 0 0;
 }
 .doomFace0 {
-  background-image: url('../Images/Doom Menu Screen.jpg');
+  background-image: url('../Images/DoomGuy0.png');
   background-size: 70% 80%;
   background-repeat: no-repeat;
   background-position: center;
