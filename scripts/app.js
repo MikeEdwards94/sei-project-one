@@ -4,12 +4,19 @@ function init() {
   const seperator = document.querySelector('.seperator')
   const menu = document.querySelector('.menu')
   const title = document.querySelector('h1')
+  const formSelect = document.querySelector('form')
 
+  formSelect.addEventListener('submit', form)
+
+  function form(event) {
+    event.preventDefault()
+  }
 
   startButton.addEventListener('click', startGame)
 
   function startGame() {
 
+    console.log('GAME BEGUN')
     seperator.classList.remove('hidden')
     title.classList.remove('hidden')
     startButton.classList.add('hidden')
@@ -30,8 +37,8 @@ function init() {
     let playerCurrentPosition = 190
 
     const alienClass = 'alien'
-    const aliensStartingPosition = [0, 1, 2, 3, 4, 20, 21 ,22, 23, 24, 40, 41, 42, 43, 44, 60, 61, 62, 63, 64]
-    let aliensCurrentPosition = [0, 1, 2, 3, 4, 20, 21 ,22, 23, 24, 40, 41, 42, 43, 44, 60, 61, 62, 63, 64]
+    const aliensStartingPosition = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20, 21 ,22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69 ,70, 71]
+    let aliensCurrentPosition = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20, 21 ,22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69 ,70, 71]
 
 
     const scoreDisplay = document.querySelector('#scoreDisplay')

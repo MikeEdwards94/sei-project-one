@@ -17,6 +17,20 @@ body {
 .login {
   text-align: center;
   padding: 400px 0 0 0;
+  color: violet;
+  font-size: 30px;
+}
+input[type=text] {
+  background-color: rgba(51, 170, 51, 0);
+  color: violet;
+  font-size: 30px;
+
+}
+#start {
+  color: violet;
+  background-color: rgba(51, 170, 51, 0);
+  font-size: 30px;
+  margin: 20px 0 0 0
 }
 
 
@@ -94,8 +108,8 @@ h1 {
 }
 .missile {
   background-image: url('../Images/Gunfire.png');
-  background-position: top;
-  background-size: 10px 60px;
+  background-position: right top;
+  background-size: 20px 30px;
   background-repeat: no-repeat;
 }
 .bomb {
@@ -126,6 +140,12 @@ h1 {
   background-position: center, bottom;
   background-repeat: no-repeat, no-repeat;
   background-size: 35px 50px, 50px 50px;
+}
+.missile.bomb {
+  background-image: url('../Images/Fireball2.gif'), url('../Images/Gunfire.png');
+  background-position: bottom, right top;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 50px 50px, 20px 30px;
 }
 
 
