@@ -1,11 +1,14 @@
 function init() {
 
   const startButton = document.querySelector('#start')
-  console.log(startButton)
+  const seperator = document.querySelector('.seperator')
+
 
   startButton.addEventListener('click', startGame)
 
   function startGame() {
+
+    seperator.classList.remove('hidden')
 
     startButton.classList.add('hidden')
 
