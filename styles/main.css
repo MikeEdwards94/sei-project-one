@@ -4,6 +4,22 @@ body {
   height: 100vh;
   margin: 0;
 }
+
+
+
+.menu {
+  background-image: url('../Images/Doom-Eternal_Hellgate_Wallpaper_1280x720-01.jpg');
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+}
+.login {
+  text-align: center;
+  padding: 400px 0 0 0;
+}
+
+
 h1 {
   height: 250px;
   background-image: url('../Images/doom-logo.jpg');

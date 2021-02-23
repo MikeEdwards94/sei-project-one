@@ -2,6 +2,8 @@ function init() {
 
   const startButton = document.querySelector('#start')
   const seperator = document.querySelector('.seperator')
+  const menu = document.querySelector('.menu')
+  const title = document.querySelector('h1')
 
 
   startButton.addEventListener('click', startGame)
@@ -9,8 +11,11 @@ function init() {
   function startGame() {
 
     seperator.classList.remove('hidden')
-
+    title.classList.remove('hidden')
     startButton.classList.add('hidden')
+    menu.classList.add('hidden')
+
+    
 
     const grid = document.querySelector('.grid')
 
