@@ -22,7 +22,7 @@ function init() {
     startButton.classList.add('hidden')
     menu.classList.add('hidden')
 
-    const doomGuyFaceBox = document.querySelector('#faceImage')
+    const doomGuyFaceBox = document.querySelector('.faceImage')
 
 
     const grid = document.querySelector('.grid')
@@ -47,9 +47,7 @@ function init() {
     const lifeDisplay = document.querySelector('#lifeDisplay')
     let lifeRemaining = 100
 
-    if (lifeRemaining === 100) {
-      doomGuyFaceBox.classList.add('.doomFace100')
-    }
+
 
     function createGrid(playerStartPosition) {
       for (let i = 0; i < cellCount; i++) {
@@ -302,7 +300,18 @@ function init() {
             clearInterval(timerIdBomb)
             lifeRemaining -= 25
             lifeDisplay.innerHTML = lifeRemaining
+            if (lifeRemaining === 75) {
+              doomGuyFaceBox.classList.remove('faceImage')
+              doomGuyFaceBox.classList.add('doomFace75')
+            } if (lifeRemaining === 50) {
+              doomGuyFaceBox.classList.remove('doomFace75')
+              doomGuyFaceBox.classList.add('doomFace50')
+            } if (lifeRemaining === 25) {
+              doomGuyFaceBox.classList.remove('doomFace50')
+              doomGuyFaceBox.classList.add('doomFace25')
             if (lifeRemaining === 0) {
+              doomGuyFaceBox.classList.remove('doomFace25')
+              doomGuyFaceBox.classList.add('doomFace0')
               clearInterval(timerIdAlienBomb)
               gameOver()
               return
