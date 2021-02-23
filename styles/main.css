@@ -50,25 +50,26 @@ h1 {
   height: 600px;
   width: 300px;
   border: 5px solid wheat;
-  background-color: green;
+  background-image: url('../Images/BackgroundWall.png');
+  background-size: 200px;
 }
 #currentScore {
-  background-color: purple;
   height: 130px;
   font-size: 40px;
   text-align: center;
-  margin: 10px 0 0 0;
+  margin: 30px 0 0 0;
+  color: tomato;
 }
 #healthRemaining {
-  background-color: blue;
-  height: 120px;
+  height: 100px;
   margin: 0 0 0 0;
   font-size: 40px;
   text-align: center;
+  color: tomato;
 }
 .faceImage {
   background-image: url('../Images/Doomguy100.gif');
-  background-size: 70% 80%;
+  background-size: 60% 70%;
   background-repeat: no-repeat;
   background-position: center;
   height: 340px;
@@ -76,7 +77,7 @@ h1 {
 }
 .doomFace75 {
   background-image: url('../Images/DoomGuy75.gif');
-  background-size: 70% 80%;
+  background-size: 60% 70%;
   background-repeat: no-repeat;
   background-position: center;
   height: 340px;
@@ -84,7 +85,7 @@ h1 {
 }
 .doomFace50 {
   background-image: url('../Images/DoomGuy50.gif');
-  background-size: 70% 80%;
+  background-size: 60% 70%;
   background-repeat: no-repeat;
   background-position: center;
   height: 340px;
@@ -92,7 +93,7 @@ h1 {
 }
 .doomFace25 {
   background-image: url('../Images/DoomGuy25.gif');
-  background-size: 70% 80%;
+  background-size: 60% 70%;
   background-repeat: no-repeat;
   background-position: center;
   height: 340px;
@@ -100,7 +101,7 @@ h1 {
 }
 .doomFace0 {
   background-image: url('../Images/DoomGuy0.png');
-  background-size: 70% 80%;
+  background-size: 60% 70%;
   background-repeat: no-repeat;
   background-position: center;
   height: 340px;
