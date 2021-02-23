@@ -67,9 +67,14 @@ h1 {
   text-align: center;
 }
 #faceImage {
-  background-color: maroon;
+  background-image: url('../Images/Doomguy100.gif');
+  background-size: 70% 70%;
+  background-repeat: no-repeat;
+  background-position: center;
   height: 340px;
   margin: 0 0 0 0;
+}
+.doomFace100 {
 }
 
 

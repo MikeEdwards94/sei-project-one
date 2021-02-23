@@ -22,7 +22,8 @@ function init() {
     startButton.classList.add('hidden')
     menu.classList.add('hidden')
 
-    
+    const doomGuyFaceBox = document.querySelector('#faceImage')
+
 
     const grid = document.querySelector('.grid')
 
@@ -44,8 +45,11 @@ function init() {
     const scoreDisplay = document.querySelector('#scoreDisplay')
     let currentScore = 0
     const lifeDisplay = document.querySelector('#lifeDisplay')
-    let lifeRemaining = 25
+    let lifeRemaining = 100
 
+    if (lifeRemaining === 100) {
+      doomGuyFaceBox.classList.add('.doomFace100')
+    }
 
     function createGrid(playerStartPosition) {
       for (let i = 0; i < cellCount; i++) {
