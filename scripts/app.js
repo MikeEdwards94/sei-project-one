@@ -309,7 +309,7 @@ function init() {
             } if (lifeRemaining === 25) {
               doomGuyFaceBox.classList.remove('doomFace50')
               doomGuyFaceBox.classList.add('doomFace25')
-            if (lifeRemaining === 0) {
+            } if (lifeRemaining === 0) {
               doomGuyFaceBox.classList.remove('doomFace25')
               doomGuyFaceBox.classList.add('doomFace0')
               clearInterval(timerIdAlienBomb)

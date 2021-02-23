@@ -67,7 +67,7 @@ h1 {
   text-align: center;
 }
 .faceImage {
-  background-image: url('../Images/Doomguy100.gif');
+  background-image: url('../Images/Doomguy100_2.gif');
   background-size: 70% 80%;
   background-repeat: no-repeat;
   background-position: center;
@@ -75,7 +75,7 @@ h1 {
   margin: 0 0 0 0;
 }
 .doomFace75 {
-  background-image: url('../Images/Doom Menu Screen.jpg');
+  background-image: url('../Images/DoomGuy75.gif');
   background-size: 70% 80%;
   background-repeat: no-repeat;
   background-position: center;
