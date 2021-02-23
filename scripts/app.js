@@ -16,7 +16,7 @@ function init() {
 
   const cacoDeathAudio = document.getElementById('cacoDeath')
   function playCacoDeathAudio() {
-    cacoDeathAudio.volume = 0.03
+    cacoDeathAudio.volume = 0.05
     cacoDeathAudio.play()
   }
   const playerShootsAudio = document.getElementById('playerShoots')
@@ -24,27 +24,39 @@ function init() {
     playerShootsAudio.volume = 0.1
     playerShootsAudio.play()
   }
-  const doomAnnouncerAudio = document.getElementById('DoomAnnouncer')
+  const doomAnnouncerAudio = document.getElementById('doomAnnouncer')
   function playDoomAnnouncerAudio() {
     doomAnnouncerAudio.play()
   }
-  const doorAudio = document.getElementById('Door')
+  const doorAudio = document.getElementById('door')
   function playDoorAudio() {
     doorAudio.volume = 0.4
     doorAudio.play()
   }
-
+  const doomMusic = document.getElementById('doomMusic')
+  function playDoomMusic() {
+    doomMusic.volume = 0.2
+    doomMusic.play()
+  }
+  const playerHitAudio = document.getElementById('playerHit')
+  function playPlayerHitAudio() {
+    playerHitAudio.volume = 0.2
+    playerHitAudio.play()
+  }
 
 
   function startGame() {
 
 
-    playDoorAudio()
+
     console.log('GAME BEGUN')
     seperator.classList.remove('hidden')
     title.classList.remove('hidden')
     startButton.classList.add('hidden')
     menu.classList.add('hidden')
+
+    playDoorAudio()
+    playDoomMusic()
 
     const doomGuyFaceBox = document.querySelector('.faceImage')
 
@@ -327,6 +339,7 @@ function init() {
   
         timerIdBomb = setInterval(() => {
           if (currentBombPosition === playerCurrentPosition) {
+            playPlayerHitAudio()
             removeBomb(currentBombPosition)
             clearInterval(timerIdBomb)
             lifeRemaining -= 25
