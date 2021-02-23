@@ -43,6 +43,11 @@ function init() {
     playerHitAudio.volume = 0.2
     playerHitAudio.play()
   }
+  const cacoAttackAudio = document.getElementById('cacoAttack')
+  function playCacoAttackAudio() {
+    cacoAttackAudio.volume = 0.1
+    cacoAttackAudio.play()
+  }
 
 
   function startGame() {
@@ -182,7 +187,7 @@ function init() {
               removeMissile(currentMissilePosition)
               return
             }
-          }, 500)
+          }, 300)
         }
       }
     }
@@ -274,6 +279,7 @@ function init() {
             clearInterval(timerIdLeft)
             return
           }
+          console.log(aliensCurrentPosition)
           removeAllAliens(aliensCurrentPosition)
           aliensMinusOne()
           addAllAliens(aliensCurrentPosition)
@@ -334,7 +340,8 @@ function init() {
       function AlienBombs(event) {
         const startingBombPosition = alienBombing + width
         let currentBombPosition = alienBombing
-      
+        playCacoAttackAudio()
+
         let timerIdBomb = null
   
         timerIdBomb = setInterval(() => {
@@ -357,9 +364,11 @@ function init() {
               doomGuyFaceBox.classList.remove('doomFace25')
               doomGuyFaceBox.classList.add('doomFace0')
               clearInterval(timerIdAlienBomb)
+              clearInterval(timerIdBomb)
               gameOver()
               return
             }
+            
             console.log('player hit life remaining ->', lifeRemaining)
           } 
           if (currentBombPosition <= 179) {
