@@ -14,8 +14,32 @@ function init() {
 
   startButton.addEventListener('click', startGame)
 
+  const cacoDeathAudio = document.getElementById('cacoDeath')
+  function playCacoDeathAudio() {
+    cacoDeathAudio.volume = 0.03
+    cacoDeathAudio.play()
+  }
+  const playerShootsAudio = document.getElementById('playerShoots')
+  function playPlayerShootsAudio() {
+    playerShootsAudio.volume = 0.1
+    playerShootsAudio.play()
+  }
+  const doomAnnouncerAudio = document.getElementById('DoomAnnouncer')
+  function playDoomAnnouncerAudio() {
+    doomAnnouncerAudio.play()
+  }
+  const doorAudio = document.getElementById('Door')
+  function playDoorAudio() {
+    doorAudio.volume = 0.4
+    doorAudio.play()
+  }
+
+
+
   function startGame() {
 
+
+    playDoorAudio()
     console.log('GAME BEGUN')
     seperator.classList.remove('hidden')
     title.classList.remove('hidden')
@@ -46,6 +70,10 @@ function init() {
     let currentScore = 0
     const lifeDisplay = document.querySelector('#lifeDisplay')
     let lifeRemaining = 100
+
+
+
+
 
 
 
@@ -119,6 +147,7 @@ function init() {
 
         if (key === 38) {
           cells[startingMissilePosition].classList.add('missile')
+          playPlayerShootsAudio()
           let timerIdMissile = null
       
           timerIdMissile = setInterval(() => {
@@ -126,6 +155,7 @@ function init() {
               console.log('hit', currentMissilePosition)
               spliceAlien(findIndex(currentMissilePosition, aliensCurrentPosition), 1)
               removeAlien(currentMissilePosition)
+              playCacoDeathAudio()
               clearInterval(timerIdMissile)
               removeMissile(currentMissilePosition)
               currentScore += 100
@@ -152,6 +182,7 @@ function init() {
 
 
     //! ALIENS
+
 
 
     function addAllAliens() {
@@ -333,6 +364,11 @@ function init() {
 
     }, 3000)
   }
+
+
+
+
+
 
 
 
