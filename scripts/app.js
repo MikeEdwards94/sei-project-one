@@ -317,7 +317,6 @@ function init() {
 
     //!ALIEN BOMB
 
-    const alienLength = aliensCurrentPosition.length
 
     const bombClass = 'bomb'
 
@@ -333,9 +332,11 @@ function init() {
 
     let timerIdAlienBomb = null
     timerIdAlienBomb = setInterval(() => {
+      const alienLength = aliensCurrentPosition.length
 
       const randomNumber = Math.floor(Math.random() * alienLength)
       const alienBombing = aliensCurrentPosition[randomNumber]
+      console.log(alienBombing)
     
       function AlienBombs(event) {
         const startingBombPosition = alienBombing + width
