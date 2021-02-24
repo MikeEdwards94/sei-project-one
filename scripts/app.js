@@ -397,11 +397,11 @@ function init() {
             removeBomb(currentBombPosition)
             return
           }
-        }, 500)
+        }, 400)
       }
       AlienBombs()
 
-    }, 2000)
+    }, 1500)
   }
 
 
