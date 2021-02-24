@@ -412,8 +412,6 @@ function init() {
 
 
   const gridContainer = document.querySelector('.grid-container')
-  const displayBox = document.querySelector('.displayInfo')
-  const finalScore = document.querySelector('.finalScore')
 
   function gameOver() {
     console.log('GAME OVER')
