@@ -106,8 +106,6 @@ function init() {
     }
     createGrid(playerStartPosition)
 
-
-
     //!PLAYER MOVEMENT
     function addPlayer(position) {
       cells[position].classList.add(playerClass)
@@ -178,6 +176,9 @@ function init() {
               removeMissile(currentMissilePosition)
               currentScore += 100
               scoreDisplay.innerHTML = currentScore
+              if (currentScore === 4800) {
+                gameOver()
+              }
               return
             } else if (currentMissilePosition >= width) {
               removeMissile(currentMissilePosition)
@@ -409,6 +410,7 @@ function init() {
   function gameOver() {
     console.log('GAME OVER')
     gridContainer.classList.add('hidden')
+    startButton.classList.remove('hidden')
   }
 
 
