@@ -35,7 +35,7 @@ input[type=text] {
 
 
 h1 {
-  height: 170px;
+  height: 25%;
   background-image: url('../Images/doom-logo.jpg');
   background-position: center;
   background-size: 500px 200px;
@@ -45,11 +45,15 @@ h1 {
 .seperator {
  display: flex;
  justify-content: center;
+ background-image: url('../Images/GridBackground.jpg'), url('../Images/BackgroundGrid2.jpg');
+ background-position: 0% 0%, 100% 50%;
+ background-size: 60% 100%, 60% 100%;
+ background-repeat: no-repeat, no-repeat;
 }
 .displayInfo {
   height: 600px;
   width: 300px;
-  border: 5px solid wheat;
+  border: 5px solid grey;
   background-image: url('../Images/BackgroundWall.png');
   background-size: 200px;
 }
@@ -123,7 +127,7 @@ h1 {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  border: 5px solid violet;
+  border: 5px solid silver;
   
   height: 600px;
   width: 600px;

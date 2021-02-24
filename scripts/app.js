@@ -386,11 +386,11 @@ function init() {
             removeBomb(currentBombPosition)
             return
           }
-        }, 600)
+        }, 500)
       }
       AlienBombs()
 
-    }, 3000)
+    }, 2000)
   }
 
 
@@ -408,8 +408,6 @@ function init() {
   function gameOver() {
     console.log('GAME OVER')
     gridContainer.classList.add('hidden')
-    displayBox.classList.add('hidden')
-    finalScore.classList.remove('hidden')
   }
 
 
