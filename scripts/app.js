@@ -163,7 +163,7 @@ function init() {
         const key = event.keyCode
 
 
-        if (key === 38) {
+        if (key === 32) {
           cells[startingMissilePosition].classList.add('missile')
           playPlayerShootsAudio()
           let timerIdMissile = null
@@ -193,7 +193,7 @@ function init() {
       }
     }
 
-    document.addEventListener('keydown', fireMissile)
+    document.addEventListener('keyup', fireMissile)
 
 
 
