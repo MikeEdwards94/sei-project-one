@@ -68,7 +68,7 @@ h1 {
 .displayInfo {
   height: 600px;
   width: 300px;
-  border: 5px solid grey;
+  border: 5px solid silver;
   background-image: url('../Images/BackgroundWall.png');
   background-size: 200px;
 }

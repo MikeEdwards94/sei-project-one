@@ -153,7 +153,16 @@ function init() {
       return indexOfVal >= 0 ? indexOfVal : 'Not Found'
     }
 
+    let canShoot = true
+
     function fireMissile(event) {
+
+      if (!canShoot) return
+      canShoot = false
+      setTimeout(() => {
+        canShoot = true
+      }, 600)
+
       if (lifeRemaining !== 0) {
 
         const startingMissilePosition = playerCurrentPosition - width
@@ -339,7 +348,6 @@ function init() {
 
       const randomNumber = Math.floor(Math.random() * alienLength)
       const alienBombing = aliensCurrentPosition[randomNumber]
-      console.log(alienBombing)
     
       function AlienBombs(event) {
         const startingBombPosition = alienBombing + width
@@ -379,7 +387,6 @@ function init() {
               return
             }
             
-            console.log('player hit life remaining ->', lifeRemaining)
           } 
           if (currentBombPosition <= 179) {
             removeBomb(currentBombPosition)
@@ -407,7 +414,6 @@ function init() {
   const gridContainer = document.querySelector('.grid-container')
   const displayBox = document.querySelector('.displayInfo')
   const finalScore = document.querySelector('.finalScore')
-  console.log(finalScore)
 
   function gameOver() {
     console.log('GAME OVER')
