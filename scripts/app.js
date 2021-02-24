@@ -50,15 +50,62 @@ function init() {
   }
 
 
+
+  const startScreen = document.querySelector('startScreen')
+  const progressBar = document.querySelector('.progress')
+  const loadingBar = document.querySelector('.loadingBar')
+  const loadingPercentage = document.querySelector('#loadingPercentage')
+  const loadingSection = document.querySelector('.loadingSection')
+
+  function runDoom() {
+    const animation = setInterval(() => {
+      if (progressBar.value < 30) {
+        loadingPercentage.innerHTML = 'Loading ' + progressBar.value + '%'
+        progressBar.value++
+      } else {
+        clearInterval(animation)
+        loading2()
+        return
+      }
+    }, 30)
+    function loading2() {
+      const animation2 = setInterval(() => {
+        if (progressBar.value < 99) {
+          loadingPercentage.innerHTML = 'Loading ' + progressBar.value + '%'
+          progressBar.value++
+        } else {
+          clearInterval(animation2)
+          loading3()
+          return
+        }
+      }, 10)  
+    }
+    function loading3() {
+      const animation3 = setInterval(() => {
+        if (progressBar.value === 99) {
+          progressBar.value++
+          loadingPercentage.innerHTML = 'Loading ' + progressBar.value + '%'
+        } else {
+          loadingPercentage.innerHTML = 'Loading ' + progressBar.value + '%'
+          clearInterval(animation3)
+          loadingSection.classList.add('hidden')
+          menu.classList.toggle('hidden')
+          return
+        }
+      }, 2000)
+    }
+  }
+  runDoom()
+
   function startGame() {
 
 
+    menu.classList.toggle('hidden')
 
     console.log('GAME BEGUN')
     seperator.classList.remove('hidden')
     title.classList.remove('hidden')
     startButton.classList.add('hidden')
-    menu.classList.add('hidden')
 
     playDoorAudio()
     playDoomMusic()

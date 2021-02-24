@@ -15,6 +15,35 @@ body {
 }
 
 
+.loadingSection {
+  background-image: url('../Images/BackgroundPic.jpg');
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black
+}
+.progress {
+  width: 400px;
+  height: 40px;
+  text-align: center;
+}
+.loadingBar {
+  background-color: red;
+  height: 200px;
+  width: 500px;
+  text-align: center;
+  font-size: 40px;
+  display: block;
+  margin: auto;
+  opacity: 0.8;
+}
+
+
+
 
 .menu {
   background-image: url('../Images/Doom-Eternal_Hellgate_Wallpaper_1280x720-01.jpg');
