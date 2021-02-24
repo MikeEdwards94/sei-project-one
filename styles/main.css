@@ -35,10 +35,10 @@ input[type=text] {
 
 
 h1 {
-  height: 250px;
+  height: 170px;
   background-image: url('../Images/doom-logo.jpg');
   background-position: center;
-  background-size: 500px 300px;
+  background-size: 500px 200px;
   background-repeat: no-repeat;
   margin: -20px 0;
 }

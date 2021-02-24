@@ -162,6 +162,7 @@ function init() {
         let currentMissilePosition = playerCurrentPosition - width
         const key = event.keyCode
 
+
         if (key === 38) {
           cells[startingMissilePosition].classList.add('missile')
           playPlayerShootsAudio()
@@ -279,7 +280,6 @@ function init() {
             clearInterval(timerIdLeft)
             return
           }
-          console.log(aliensCurrentPosition)
           removeAllAliens(aliensCurrentPosition)
           aliensMinusOne()
           addAllAliens(aliensCurrentPosition)
@@ -340,6 +340,12 @@ function init() {
       function AlienBombs(event) {
         const startingBombPosition = alienBombing + width
         let currentBombPosition = alienBombing
+        if (aliensCurrentPosition.length === 0) {
+          clearInterval(timerIdAlienBomb)
+          clearInterval(timerIdBomb)
+          return
+        }
+
         playCacoAttackAudio()
 
         let timerIdBomb = null
