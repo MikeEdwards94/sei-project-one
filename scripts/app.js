@@ -46,14 +46,18 @@ function init() {
   }
   const cacoAttackAudio = document.getElementById('cacoAttack')
   function playCacoAttackAudio() {
-    cacoAttackAudio.volume = 0.1
+    cacoAttackAudio.volume = 0.05
     cacoAttackAudio.play()
+  }
+  const windowsErrorAudio = document.getElementById('windowsError')
+  function playWindowsErrorAudio() {
+    windowsErrorAudio.volume = 0.1
+    windowsErrorAudio.play()
   }
 
   //!Windows Start Screen
 
   const windowsStart = document.querySelector('.windowsStart')
-  const recycleBin = document.querySelector('.recycleBin')
   const doom94 = document.querySelector('.doom94')
   const halfLife3 = document.querySelector('.halfLife3')
   const myLittlePony = document.querySelector('.myLittlePony')
@@ -67,16 +71,19 @@ function init() {
   
   halfLife3.addEventListener('dblclick' , halfLife3Func)
   function halfLife3Func() {
+    playWindowsErrorAudio()
     alert('Half-Life 3 cannot be found anywhere, please try again later.')
   }
   
   myLittlePony.addEventListener('dblclick' , myLittlePonyFunc)
   function myLittlePonyFunc() {
+    playWindowsErrorAudio()
     alert('Authorisation Denied. You are at least 10 times too old to play this.')
   }
 
   bankDetails.addEventListener('dblclick' , bankDetailsFunc)
   function bankDetailsFunc() {
+    playWindowsErrorAudio()
     alert('Oi you\'re not supposed to be clicking this, cut that out nosey.')
   }
 
@@ -86,7 +93,8 @@ function init() {
   }
   noX.addEventListener('click', noXFunc)
   function noXFunc() {
-    alert('Hey don\'t try to brush this off, you know what you clicked on.. I guess you should just try click something else for now..')
+    playWindowsErrorAudio()
+    alert('Hey don\'t try to brush this off, you know what you clicked on.. I guess you should just try click something else for now.. *cough doom 94 *cough')
   }
 
 
@@ -347,7 +355,7 @@ function init() {
             clearInterval(timerIdRight)
             moveDownToLeft()
           }
-        }, 100000)
+        }, 1000)
       }
       function moveDownToLeft() {
         let timerIdDown = null
@@ -486,7 +494,7 @@ function init() {
       }
       AlienBombs()
 
-    }, 150000)
+    }, 1000)
   }
 
 
