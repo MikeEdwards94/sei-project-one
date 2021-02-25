@@ -5,6 +5,7 @@ function init() {
   const menu = document.querySelector('.menu')
   const title = document.querySelector('h1')
   const formSelect = document.querySelector('form')
+  const gameBackground = document.querySelector('.gameBackground')
 
   formSelect.addEventListener('submit', form)
 
@@ -89,18 +90,6 @@ function init() {
   }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
   const startScreen = document.querySelector('startScreen')
   const progressBar = document.querySelector('.progress')
   const loadingBar = document.querySelector('.loadingBar')
@@ -142,6 +131,7 @@ function init() {
           clearInterval(animation3)
           loadingSection.classList.add('hidden')
           menu.classList.toggle('hidden')
+          playDoomAnnouncerAudio()
           return
         }
       }, 2000)
@@ -150,11 +140,8 @@ function init() {
 
   function startGame() {
 
-
     menu.classList.toggle('hidden')
-
-    console.log('GAME BEGUN')
-    seperator.classList.remove('hidden')
+    gameBackground.classList.remove('hidden')
     title.classList.remove('hidden')
     startButton.classList.add('hidden')
 
@@ -360,7 +347,7 @@ function init() {
             clearInterval(timerIdRight)
             moveDownToLeft()
           }
-        }, 1000)
+        }, 100000)
       }
       function moveDownToLeft() {
         let timerIdDown = null
@@ -499,7 +486,7 @@ function init() {
       }
       AlienBombs()
 
-    }, 1500)
+    }, 150000)
   }
 
 
@@ -512,7 +499,6 @@ function init() {
   const gridContainer = document.querySelector('.grid-container')
 
   function gameOver() {
-    console.log('GAME OVER')
     gridContainer.classList.add('hidden')
     startButton.classList.remove('hidden')
   }
@@ -521,22 +507,3 @@ function init() {
 }
 
 window.addEventListener('DOMContentLoaded', init)
-
-//aliensCurrentPosition.includes(19) || aliensCurrentPosition.includes(39) || aliensCurrentPosition.includes(59) || aliensCurrentPosition.includes(79) || aliensCurrentPosition.includes(99) || aliensCurrentPosition.includes(119) || aliensCurrentPosition.includes(139) || aliensCurrentPosition.includes(159) || aliensCurrentPosition.includes(179) || aliensCurrentPosition.includes(199)
-//aliensCurrentPosition.includes(20) || aliensCurrentPosition.includes(40) || aliensCurrentPosition.includes(60) || aliensCurrentPosition.includes(80) || aliensCurrentPosition.includes(100) || aliensCurrentPosition.includes(120) || aliensCurrentPosition.includes(140) || aliensCurrentPosition.includes(160) || aliensCurrentPosition.includes(180)
-
-//aliensCurrentPosition.includes(180) || aliensCurrentPosition.includes(181) || aliensCurrentPosition.includes(182) || aliensCurrentPosition.includes(183) || aliensCurrentPosition.includes(184) || aliensCurrentPosition.includes(185) || aliensCurrentPosition.includes(186) || aliensCurrentPosition.includes(187) || aliensCurrentPosition.includes(188) || aliensCurrentPosition.includes(189) || aliensCurrentPosition.includes(190) || aliensCurrentPosition.includes(191) || aliensCurrentPosition.includes(192) || aliensCurrentPosition.includes(193) || aliensCurrentPosition.includes(194) || aliensCurrentPosition.includes(195) || aliensCurrentPosition.includes(196) || aliensCurrentPosition.includes(197) || aliensCurrentPosition.includes(198) || aliensCurrentPosition.includes(199)
-
-//if (cells.classList.contains('missile')) {
-//  console.log('wowowow')
-//}
-
-//const gridDiv = document.querySelector('.grid').childNodes
-//gridDiv[0].style.backgroundColor = 'yellow'
-
-//let j = 0
-//for (j = 0; j < gridDiv.length; j++) {
-//  gridDiv[j].classList.add = 'gridSquares'
-//}
-
-//console.log(gridDiv)

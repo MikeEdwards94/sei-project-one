@@ -171,22 +171,24 @@ input[type=text] {
   margin: 20px 0 0 0
 }
 
-
+.gameBackground {
+  background-image: url('../Images/GridBackground.png'), url('../Images/BackgroundGrid2.jpg');
+  background-position: 0% 0%, 100% 50%;
+  background-size: 60% 100%, 60% 100%;
+  background-repeat: no-repeat, no-repeat;
+  height: 100%;
+}
 h1 {
   height: 25%;
-  background-image: url('../Images/doom-logo.jpg');
+  background-image: url('../Images/doom-logo.png');
   background-position: center;
   background-size: 500px 200px;
   background-repeat: no-repeat;
-  margin: -20px 0;
 }
 .seperator {
  display: flex;
  justify-content: center;
- background-image: url('../Images/GridBackground.jpg'), url('../Images/BackgroundGrid2.jpg');
- background-position: 0% 0%, 100% 50%;
- background-size: 60% 100%, 60% 100%;
- background-repeat: no-repeat, no-repeat;
+
 }
 .displayInfo {
   height: 600px;

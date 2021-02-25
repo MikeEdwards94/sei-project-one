@@ -40,21 +40,19 @@
       </form>
     </div>
   </section>
-  <h1 class="hidden"></h1>
-  <div class="seperator hidden">
-    <div class="grid-container">
-      <div class="grid"></div>
+  <section class='gameBackground hidden'>
+    <h1 class="hidden"></h1>
+    <div class="seperator">
+      <div class="grid-container">
+        <div class="grid"></div>
+      </div>
+      <div class="displayInfo">
+        <p id="currentScore">Current Score <span id="scoreDisplay">0</span></p>
+        <p id='healthRemaining'>Health Remaining <span id="lifeDisplay">100</span>%</p>
+        <div class="faceImage"></div>
+      </div>
     </div>
-    <div class="displayInfo">
-      <p id="currentScore">Current Score <span id="scoreDisplay">0</span></p>
-      <p id='healthRemaining'>Health Remaining <span id="lifeDisplay">100</span>%</p>
-      <div class="faceImage"></div>
-    </div>
-
-    <div class="hidden finalScore">
-      <p>Final Score <span id="scoreDisplay"></span></p>
-    </div>
-  </div>
+  </section>
   <audio id="cacoDeath" src="./Sound/CacoDeath.wav"></audio>
   <audio id="cacoAttack" src="./Sound/CacoAttack.wav"></audio>
   <audio id="playerShoots" src="./Sound/Shoot.wav"></audio>
