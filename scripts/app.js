@@ -98,6 +98,51 @@ function init() {
   }
 
 
+
+
+
+  doom94.addEventListener('click', doom94ClickFunc)
+  function doom94ClickFunc() {
+    doom94.classList.add('doom94Click')
+    halfLife3.classList.remove('halfLife3Click')
+    myLittlePony.classList.remove('myLittlePonyClick')
+    bankDetails.classList.remove('bankDetailsClick')
+    nakedPics.classList.remove('nakedPicsClick')
+  }
+  halfLife3.addEventListener('click', halfLife3ClickFunc)
+  function halfLife3ClickFunc() {
+    doom94.classList.remove('doom94Click')
+    halfLife3.classList.add('halfLife3Click')
+    myLittlePony.classList.remove('myLittlePonyClick')
+    bankDetails.classList.remove('bankDetailsClick')
+    nakedPics.classList.remove('nakedPicsClick')
+  }
+  myLittlePony.addEventListener('click', myLittlePonyClickFunc)
+  function myLittlePonyClickFunc() {
+    doom94.classList.remove('doom94Click')
+    halfLife3.classList.remove('halfLife3Click')
+    myLittlePony.classList.add('myLittlePonyClick')
+    bankDetails.classList.remove('bankDetailsClick')
+    nakedPics.classList.remove('nakedPicsClick')
+  }
+  bankDetails.addEventListener('click', bankDetailsClickFunc)
+  function bankDetailsClickFunc() {
+    doom94.classList.remove('doom94Click')
+    halfLife3.classList.remove('halfLife3Click')
+    myLittlePony.classList.remove('myLittlePonyClick')
+    bankDetails.classList.add('bankDetailsClick')
+    nakedPics.classList.remove('nakedPicsClick')
+  }
+  nakedPics.addEventListener('click', nakedPicsClickFunc)
+  function nakedPicsClickFunc() {
+    doom94.classList.remove('doom94Click')
+    halfLife3.classList.remove('halfLife3Click')
+    myLittlePony.classList.remove('myLittlePonyClick')
+    bankDetails.classList.remove('bankDetailsClick')
+    nakedPics.classList.add('nakedPicsClick')
+  }
+
+
   const startScreen = document.querySelector('startScreen')
   const progressBar = document.querySelector('.progress')
   const loadingBar = document.querySelector('.loadingBar')
@@ -270,7 +315,6 @@ function init() {
       
           timerIdMissile = setInterval(() => {
             if (aliensCurrentPosition.includes(currentMissilePosition)) {
-              console.log('hit', currentMissilePosition)
               spliceAlien(findIndex(currentMissilePosition, aliensCurrentPosition), 1)
               removeAlien(currentMissilePosition)
               playCacoDeathAudio()

@@ -47,6 +47,15 @@ body {
   top: 2%;
   opacity: 0;
 }
+.doom94Click {
+  background-color: blueviolet;
+  background-size: cover;
+  height: 7.5%;
+  width: 70px;
+  position: relative;
+  top: 2%;
+  opacity: 0.11;
+}
 .halfLife3 {
   background-color: yellow;
   background-size: cover;
@@ -55,6 +64,15 @@ body {
   position: relative;
   top: 4%;
   opacity: 0;
+}
+.halfLife3Click {
+  background-color: blueviolet;
+  background-size: cover;
+  height: 7%;
+  width: 70px;
+  position: relative;
+  top: 4%;
+  opacity: 0.11;
 }
 .myLittlePony {
   background-color: red;
@@ -65,6 +83,15 @@ body {
   top: 6.5%;
   opacity: 0;
 }
+.myLittlePonyClick {
+  background-color: blueviolet;
+  background-size: cover;
+  height: 8.5%;
+  width: 70px;
+  position: relative;
+  top: 6.5%;
+  opacity: 0.11;
+}
 .bankDetails {
   background-color: yellow;
   background-size: cover;
@@ -74,6 +101,15 @@ body {
   top: 7.5%;
   opacity: 0;
 }
+.bankDetailsClick {
+  background-color: blueviolet;
+  background-size: cover;
+  height: 7.5%;
+  width: 70px;
+  position: relative;
+  top: 7.5%;
+  opacity: 0.11;
+}
 .nakedPics {
   background-color: red;
   background-size: cover;
@@ -82,6 +118,15 @@ body {
   position: relative;
   top: 9%;
   opacity: 0;
+}
+.nakedPicsClick {
+  background-color: blueviolet;
+  background-size: cover;
+  height: 7.5%;
+  width: 70px;
+  position: relative;
+  top: 9.5%;
+  opacity: 0.11;
 }
 .noX {
   background-color: black;
@@ -95,7 +140,7 @@ body {
 }
 .openNakedPics {
   min-height: 1000px;
-  background-image: url('../Images/NakedFolder.png');
+  background-image: url('../Images/NakedX.png');
   background-size: cover;
   background-repeat: no-repeat;
   height: 100%;
@@ -203,14 +248,14 @@ h1 {
   font-size: 40px;
   text-align: center;
   margin: 30px 0 0 0;
-  color: tomato;
+  color: red;
 }
 #healthRemaining {
   height: 100px;
   margin: 0 0 0 0;
   font-size: 40px;
   text-align: center;
-  color: tomato;
+  color: red;
 }
 .faceImage {
   background-image: url('../Images/Doomguy100.gif');
