@@ -49,6 +49,56 @@ function init() {
     cacoAttackAudio.play()
   }
 
+  //!Windows Start Screen
+
+  const windowsStart = document.querySelector('.windowsStart')
+  const recycleBin = document.querySelector('.recycleBin')
+  const doom94 = document.querySelector('.doom94')
+  const halfLife3 = document.querySelector('.halfLife3')
+  const myLittlePony = document.querySelector('.myLittlePony')
+  const bankDetails = document.querySelector('.bankDetails')
+  const nakedPics = document.querySelector('.nakedPics')
+  const noX = document.querySelector('.noX')
+  const windowsBasicImg = document.querySelector('.windowsBasicImg')
+
+
+  doom94.addEventListener('dblclick', runDoom)
+  
+  halfLife3.addEventListener('dblclick' , halfLife3Func)
+  function halfLife3Func() {
+    alert('Half-Life 3 cannot be found anywhere, please try again later.')
+  }
+  
+  myLittlePony.addEventListener('dblclick' , myLittlePonyFunc)
+  function myLittlePonyFunc() {
+    alert('Authorisation Denied. You are at least 10 times too old to play this.')
+  }
+
+  bankDetails.addEventListener('dblclick' , bankDetailsFunc)
+  function bankDetailsFunc() {
+    alert('Oi you\'re not supposed to be clicking this, cut that out nosey.')
+  }
+
+  nakedPics.addEventListener('dblclick', openNakedPicsFunc)
+  function openNakedPicsFunc() {
+    windowsStart.classList.add('openNakedPics')
+  }
+  noX.addEventListener('click', noXFunc)
+  function noXFunc() {
+    alert('Hey don\'t try to brush this off, you know what you clicked on.. I guess you should just try click something else for now..')
+  }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   const startScreen = document.querySelector('startScreen')
@@ -58,6 +108,8 @@ function init() {
   const loadingSection = document.querySelector('.loadingSection')
 
   function runDoom() {
+    windowsBasicImg.classList.toggle('hidden')
+    loadingSection.classList.toggle('hidden')
     const animation = setInterval(() => {
       if (progressBar.value < 30) {
         loadingPercentage.innerHTML = 'Loading ' + progressBar.value + '%'
@@ -95,7 +147,6 @@ function init() {
       }, 2000)
     }
   }
-  runDoom()
 
   function startGame() {
 

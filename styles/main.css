@@ -14,6 +14,98 @@ body {
     1px 1px 0 #000,
 }
 
+.windowsBasicImg {
+  min-height: 1000px;
+  min-width: 1500px;
+  max-width: 100%;
+  background-image: url('../Images/Basic.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 75%;
+}
+.windowsStart {
+  min-height: 1000px;
+  background-image: url('../Images/Basic.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 75%;
+}
+.recycleBin {
+  background-color: yellow;
+  background-size: cover;
+  height: 7%;
+  width: 70px;
+  position: relative;
+  top: 0%;
+  opacity: 0;
+}
+.doom94 {
+  background-color: red;
+  background-size: cover;
+  height: 7.5%;
+  width: 70px;
+  position: relative;
+  top: 2%;
+  opacity: 0;
+}
+.halfLife3 {
+  background-color: yellow;
+  background-size: cover;
+  height: 7%;
+  width: 70px;
+  position: relative;
+  top: 4%;
+  opacity: 0;
+}
+.myLittlePony {
+  background-color: red;
+  background-size: cover;
+  height: 8.5%;
+  width: 70px;
+  position: relative;
+  top: 6.5%;
+  opacity: 0;
+}
+.bankDetails {
+  background-color: yellow;
+  background-size: cover;
+  height: 7.5%;
+  width: 70px;
+  position: relative;
+  top: 7.5%;
+  opacity: 0;
+}
+.nakedPics {
+  background-color: red;
+  background-size: cover;
+  height: 8%;
+  width: 70px;
+  position: relative;
+  top: 9%;
+  opacity: 0;
+}
+.noX {
+  background-color: black;
+  background-size: cover;
+  height: 3%;
+  width: 50px;
+  position: relative;
+  top: -355px;
+  left: 1430px;
+  opacity: 0;
+}
+.openNakedPics {
+  min-height: 1000px;
+  background-image: url('../Images/NakedFolder.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100%;
+}
+
+
+
+
+
 
 .loadingSection {
   background-image: url('../Images/BackgroundPic.jpg');
