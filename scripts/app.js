@@ -1,7 +1,6 @@
 function init() {
 
   const startButton = document.querySelector('#start')
-  const seperator = document.querySelector('.seperator')
   const menu = document.querySelector('.menu')
   const title = document.querySelector('h1')
   const formSelect = document.querySelector('form')
@@ -27,6 +26,7 @@ function init() {
   }
   const doomAnnouncerAudio = document.getElementById('doomAnnouncer')
   function playDoomAnnouncerAudio() {
+    doomAnnouncerAudio.volume = 0.4
     doomAnnouncerAudio.play()
   }
   const doorAudio = document.getElementById('door')
@@ -143,9 +143,7 @@ function init() {
   }
 
 
-  const startScreen = document.querySelector('startScreen')
   const progressBar = document.querySelector('.progress')
-  const loadingBar = document.querySelector('.loadingBar')
   const loadingPercentage = document.querySelector('#loadingPercentage')
   const loadingSection = document.querySelector('.loadingSection')
 
@@ -217,8 +215,7 @@ function init() {
     let playerCurrentPosition = 190
 
     const alienClass = 'alien'
-    const aliensStartingPosition = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20, 21 ,22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69 ,70, 71]
-    let aliensCurrentPosition = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20, 21 ,22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69 ,70, 71]
+    const aliensCurrentPosition = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 20, 21 ,22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69 ,70, 71]
 
 
     const scoreDisplay = document.querySelector('#scoreDisplay')
@@ -486,8 +483,7 @@ function init() {
       const randomNumber = Math.floor(Math.random() * alienLength)
       const alienBombing = aliensCurrentPosition[randomNumber]
     
-      function AlienBombs(event) {
-        const startingBombPosition = alienBombing + width
+      function AlienBombs() {
         let currentBombPosition = alienBombing
         if (aliensCurrentPosition.length === 0) {
           clearInterval(timerIdAlienBomb)

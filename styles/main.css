@@ -235,6 +235,8 @@ h1 {
   display: flex;
   justify-content: center;
   margin: -20px 0 0 0;
+  font-family: 'DotGothic16', sans-serif;;
+
 }
 .displayInfo {
   height: 600px;
@@ -375,18 +377,10 @@ h1 {
 }
 
 
-.mainScreen {
-  background-image: url('https://hyperpix.net/wp-content/uploads/2019/09/doom-logo-font-download.jpg');
-}
 
 .gridCell {
   font-size: 0px;
 }
 .hidden {
   display: none;
-}
-.finalScore {
-  background-color: violet;
-  height: 300px;
-  width: 200px;
 }
