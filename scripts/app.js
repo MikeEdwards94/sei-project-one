@@ -26,7 +26,7 @@ function init() {
   }
   const doomAnnouncerAudio = document.getElementById('doomAnnouncer')
   function playDoomAnnouncerAudio() {
-    doomAnnouncerAudio.volume = 0.4
+    doomAnnouncerAudio.volume = 0.1
     doomAnnouncerAudio.play()
   }
   const doorAudio = document.getElementById('door')
@@ -51,7 +51,7 @@ function init() {
   }
   const windowsErrorAudio = document.getElementById('windowsError')
   function playWindowsErrorAudio() {
-    windowsErrorAudio.volume = 0.1
+    windowsErrorAudio.volume = 0.3
     windowsErrorAudio.play()
   }
 
