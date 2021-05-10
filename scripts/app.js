@@ -57,13 +57,10 @@ function init() {
 
   //!Windows Start Screen
 
-  const windowsStart = document.querySelector('.windowsStart')
   const doom94 = document.querySelector('.doom94')
   const halfLife3 = document.querySelector('.halfLife3')
   const myLittlePony = document.querySelector('.myLittlePony')
   const bankDetails = document.querySelector('.bankDetails')
-  const nakedPics = document.querySelector('.nakedPics')
-  const noX = document.querySelector('.noX')
   const windowsBasicImg = document.querySelector('.windowsBasicImg')
 
 
@@ -72,13 +69,13 @@ function init() {
   halfLife3.addEventListener('dblclick' , halfLife3Func)
   function halfLife3Func() {
     playWindowsErrorAudio()
-    alert('alf-Life 3 cannot be found anywhere, please try again later.')
+    alert('Half-Life 3 cannot be found anywhere :\'( please try again later.')
   }
   
   myLittlePony.addEventListener('dblclick' , myLittlePonyFunc)
   function myLittlePonyFunc() {
     playWindowsErrorAudio()
-    alert('Authorisation Denied. You are at least 10 times too old to play this.')
+    alert('Cannot run My Little Pony. No disk found.')
   }
 
   bankDetails.addEventListener('dblclick' , bankDetailsFunc)
@@ -87,15 +84,6 @@ function init() {
     alert('Oi you\'re not supposed to be clicking this, cut that out nosey.')
   }
 
-  nakedPics.addEventListener('dblclick', openNakedPicsFunc)
-  function openNakedPicsFunc() {
-    windowsStart.classList.add('openNakedPics')
-  }
-  noX.addEventListener('click', noXFunc)
-  function noXFunc() {
-    playWindowsErrorAudio()
-    alert('Hey don\'t try to brush this off, you know what you clicked on.. I guess you should just try click something else for now.. *cough doom 94 *cough')
-  }
 
 
 
@@ -107,7 +95,6 @@ function init() {
     halfLife3.classList.remove('halfLife3Click')
     myLittlePony.classList.remove('myLittlePonyClick')
     bankDetails.classList.remove('bankDetailsClick')
-    nakedPics.classList.remove('nakedPicsClick')
   }
   halfLife3.addEventListener('click', halfLife3ClickFunc)
   function halfLife3ClickFunc() {
@@ -115,7 +102,6 @@ function init() {
     halfLife3.classList.add('halfLife3Click')
     myLittlePony.classList.remove('myLittlePonyClick')
     bankDetails.classList.remove('bankDetailsClick')
-    nakedPics.classList.remove('nakedPicsClick')
   }
   myLittlePony.addEventListener('click', myLittlePonyClickFunc)
   function myLittlePonyClickFunc() {
@@ -123,7 +109,6 @@ function init() {
     halfLife3.classList.remove('halfLife3Click')
     myLittlePony.classList.add('myLittlePonyClick')
     bankDetails.classList.remove('bankDetailsClick')
-    nakedPics.classList.remove('nakedPicsClick')
   }
   bankDetails.addEventListener('click', bankDetailsClickFunc)
   function bankDetailsClickFunc() {
@@ -131,15 +116,6 @@ function init() {
     halfLife3.classList.remove('halfLife3Click')
     myLittlePony.classList.remove('myLittlePonyClick')
     bankDetails.classList.add('bankDetailsClick')
-    nakedPics.classList.remove('nakedPicsClick')
-  }
-  nakedPics.addEventListener('click', nakedPicsClickFunc)
-  function nakedPicsClickFunc() {
-    doom94.classList.remove('doom94Click')
-    halfLife3.classList.remove('halfLife3Click')
-    myLittlePony.classList.remove('myLittlePonyClick')
-    bankDetails.classList.remove('bankDetailsClick')
-    nakedPics.classList.add('nakedPicsClick')
   }
 
 
