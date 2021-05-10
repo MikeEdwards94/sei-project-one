@@ -110,41 +110,6 @@ body {
   top: 7.5%;
   opacity: 0.11;
 }
-.nakedPics {
-  background-color: red;
-  background-size: cover;
-  height: 8%;
-  width: 70px;
-  position: relative;
-  top: 9%;
-  opacity: 0;
-}
-.nakedPicsClick {
-  background-color: blueviolet;
-  background-size: cover;
-  height: 7.5%;
-  width: 70px;
-  position: relative;
-  top: 9.5%;
-  opacity: 0.11;
-}
-.noX {
-  background-color: black;
-  background-size: cover;
-  height: 3%;
-  width: 50px;
-  position: relative;
-  top: -355px;
-  left: 1430px;
-  opacity: 0;
-}
-.openNakedPics {
-  min-height: 1000px;
-  background-image: url('../Images/NakedX.png');
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 100%;
-}
 
 
 
