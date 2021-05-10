@@ -72,7 +72,7 @@ function init() {
   halfLife3.addEventListener('dblclick' , halfLife3Func)
   function halfLife3Func() {
     playWindowsErrorAudio()
-    alert('Half-Life 3 cannot be found anywhere, please try again later.')
+    alert('alf-Life 3 cannot be found anywhere, please try again later.')
   }
   
   myLittlePony.addEventListener('dblclick' , myLittlePonyFunc)
