@@ -2,7 +2,7 @@
 
 <h3>Project Overview:</h3>
 
-For the first project we were tasked with creating a functioning game of our choice in the browser using a combination of HTML, CSS and Javascript.
+For the first project we were tasked with creating a functioning game of our choice in the browser using a combination of HTML, CSS and JavaScript within just over a week.
 
 For my first ever project as a software developer I made a Space Invaders game inspired by the style of the original DOOM.
 
